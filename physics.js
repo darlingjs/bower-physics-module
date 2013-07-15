@@ -14,7 +14,9 @@
         friction: 0.75,
         density: 1.0,
         angularDamping: 0.0,
-        fixedRotation: false
+        linearDamping: 0.0,
+        fixedRotation: false,
+        allowSleep: true
     });
 
     m.$c('ngFixedRotation', {});
@@ -249,4 +251,16 @@
         'is': ['rock'],
         'collideWith': ['vehicle']
     });
+
+    /**
+     * Component for applying impulse to physic body
+     */
+    m.$c('ngApplyImpulse', {
+        x: 0.0,
+        y: 0.0,
+        center: true,
+        dx: 0.0,
+        dy: 0.0,
+        autoRemove: true
+    })
 })(darlingjs);
